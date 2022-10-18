@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+package service;
+
+option go_package = "github.com/media-informatics/aufgabe04a/service";
+
+service Directory {
+    rpc GetDir(DirName) returns (FileList) {}
+}
+
+message DirName {
+    string name = 1;
+}
+
+message FileList {
+    repeated string entry = 1;
+}
